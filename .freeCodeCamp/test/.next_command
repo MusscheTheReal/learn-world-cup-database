@@ -438,3 +438,9 @@ trap '__vsc_preexec_all "$_"' DEBUG
 __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 psql --username=freecodecamp --dbname=postgres
 ./queries.sh
+psql -U freecodecamp -d wordlcup -a -f worldcup.sql
+psql -U freecodecamp -d worldcup -a -f worldcup.sql
+psql -U freecodecamp -d worldcup
+pg_dump worldcup
+pg_dump worldcup > worldcup.sql
+pg_dump -cC --inserts -U freecodecamp worldcup > worldcup.sql
